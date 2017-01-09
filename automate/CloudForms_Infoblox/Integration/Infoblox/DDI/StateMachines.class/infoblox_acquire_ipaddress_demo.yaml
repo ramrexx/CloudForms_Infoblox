@@ -1,0 +1,28 @@
+---
+object_type: instance
+version: 1.0
+object:
+  attributes:
+    display_name: 
+    name: infoblox_acquire_ipaddress_demo
+    inherits: 
+    description: 
+  fields:
+  - password:
+      value: v2:{yBzdXEq8H4KZZR+nEnt+NQ==}
+  - network:
+      value: 192.168.1.0/24
+  - dns_domain:
+      value: example.com
+  - subnet_mask:
+      value: 255.255.255.0
+  - gateway:
+      value: 192.168.1.1
+  - dns_servers:
+      value: 192.168.1.1
+  - devicetype:
+      value: VirtualVmxnet3
+  - vlan:
+      value: VM Network
+  - step2:
+      value: METHOD::infoblox_acquire_ipaddress

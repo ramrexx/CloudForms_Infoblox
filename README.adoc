@@ -1,0 +1,61 @@
+////
+ README.adoc
+-------------------------------------------------------------------------------
+   Copyright 2016 Kevin Morey <kevin@redhat.com>
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-------------------------------------------------------------------------------
+////
+
+= CloudForms Infoblox
+
+The purpose of this project is to provide a starting point for integrating Red Hat (R) https://www.redhat.com/en/technologies/cloud-computing/cloudforms[Red Hat CloudForms] and Infoblox.
+
+
+== Table of Contents
+
+* <<Overview>>
+* <<Installation Steps>>
+** <<Download the Repo>>
+** <<Import the Automate Domain>>
+** <<Import the Service Dialogs>>
+** <<Update Automate StateMachine>>
+* link:documentation/userguide.adoc[User Guide]
+* link:documentation/troubleshooting.adoc[Troubleshooting Guide]
+* <<Contribute>>
+
+== Overview
+
+== Installation Steps
+
+link:https://github.com/ramrexx/CloudForms_Infoblox/archive/master.zip[Download the repo]
+
+=== Import the Automate Domain
+
+ /usr/bin/miqimport domain CloudForms_Infoblox /root/CloudForms_Infoblox/automate/
+
+=== Update Automate StateMachine
+
+* Log into your CloudForms/ManageIQ UI.
+* Navigate to Automate / CloudForms_Infoblox / Integration / Infoblox / DDI / StateMachines
+** Update the *StateMachine* class schema with your Infoblox information.
+
+image:documentation/images/snow-automate-schema.png[link=documentation/images/snow-automate-schema.png]
+
+<<top>>
+
+== Contribute
+
+Have an idea and want to help? Fork the repo and link:https://github.com/ramrexx/CloudForms_Infoblox/pulls[Submit a pull request]
+
+<<top>>

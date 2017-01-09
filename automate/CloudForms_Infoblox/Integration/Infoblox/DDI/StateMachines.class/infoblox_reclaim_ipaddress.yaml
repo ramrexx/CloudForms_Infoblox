@@ -1,0 +1,14 @@
+---
+object_type: instance
+version: 1.0
+object:
+  attributes:
+    display_name: 
+    name: infoblox_reclaim_ipaddress
+    inherits: 
+    description: 
+  fields:
+  - password:
+      value: v2:{yBzdXEq8H4KZZR+nEnt+NQ==}
+  - step2:
+      value: METHOD::infoblox_reclaim_ipaddress

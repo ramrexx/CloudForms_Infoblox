@@ -1,0 +1,393 @@
+---
+object_type: class
+version: 1.0
+object:
+  attributes:
+    description: 
+    display_name: 
+    name: StateMachines
+    type: 
+    inherits: 
+    visibility: 
+    owner: 
+  schema:
+  - field:
+      aetype: attribute
+      name: servername
+      display_name: 
+      datatype: string
+      priority: 1
+      owner: 
+      default_value: infoblox.example.com
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: ''
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: username
+      display_name: 
+      datatype: string
+      priority: 2
+      owner: 
+      default_value: admin
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: password
+      display_name: 
+      datatype: password
+      priority: 3
+      owner: 
+      default_value: v2:{Zp93GtjLQqtkD5Ix/cJ4dQ==}
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: api_version
+      display_name: 
+      datatype: string
+      priority: 4
+      owner: 
+      default_value: '1.7'
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: network_view
+      display_name: 
+      datatype: string
+      priority: 5
+      owner: 
+      default_value: default
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: network
+      display_name: 
+      datatype: string
+      priority: 6
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: Network CIDR (i.e. 192.168.0/24)
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: dns_domain
+      display_name: 
+      datatype: string
+      priority: 7
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: addr_mode
+      display_name: 
+      datatype: string
+      priority: 8
+      owner: 
+      default_value: static
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: static|dhcp
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: subnet_mask
+      display_name: 
+      datatype: string
+      priority: 9
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: gateway
+      display_name: 
+      datatype: string
+      priority: 10
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: dns_servers
+      display_name: 
+      datatype: string
+      priority: 11
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: devicetype
+      display_name: 
+      datatype: string
+      priority: 12
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: i.e. VirtualVmxnet3
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: attribute
+      name: vlan
+      display_name: 
+      datatype: string
+      priority: 13
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: ''
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: relationship
+      name: rel1
+      display_name: 
+      datatype: string
+      priority: 14
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: 
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: state
+      name: step1
+      display_name: 
+      datatype: string
+      priority: 15
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: on_error
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: state
+      name: step2
+      display_name: 
+      datatype: string
+      priority: 16
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: on_error
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: state
+      name: step3
+      display_name: 
+      datatype: string
+      priority: 17
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: on_error
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: state
+      name: step4
+      display_name: 
+      datatype: string
+      priority: 18
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: on_error
+      max_retries: 
+      max_time: 
+  - field:
+      aetype: state
+      name: step5
+      display_name: 
+      datatype: string
+      priority: 19
+      owner: 
+      default_value: 
+      substitute: true
+      message: create
+      visibility: 
+      collect: 
+      scope: 
+      description: 
+      condition: 
+      on_entry: 
+      on_exit: 
+      on_error: on_error
+      max_retries: 
+      max_time: 

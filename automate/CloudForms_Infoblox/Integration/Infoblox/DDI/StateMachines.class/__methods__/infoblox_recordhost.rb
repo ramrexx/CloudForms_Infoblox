@@ -85,18 +85,6 @@ def call_infoblox(action, ref='network', body_hash=nil)
   end
 end
 
-def get_network_view(nic_index, nic_options)
-  view = $evm.object['network_view'] || nic_options[:network_view] || 'default'
-  log_and_update_message(:info, "nic_index: #{nic_index} view: #{view}")
-  return view
-end
-
-def get_network(nic_index, nic_options)
-  network = $evm.object['network'] || nic_options[:network]
-  log_and_update_message(:info, "nic_index: #{nic_index} network: #{network}")
-  return network
-end
-
 def get_fqdn(nic_index, hostname, nic_options)
   domain_name = $evm.object['dns_domain'] || nic_options[:dns_domain]
   unless nic_index.zero?
@@ -136,18 +124,14 @@ def check_ipaddresses
     $evm.root['ae_result'] = 'retry'
     $evm.root['ae_retry_limit'] = 30.seconds
     exit MIQ_OK
-  # elsif ip_list.count == 1
-  #   @vm.refresh
-  #   $evm.root['ae_result'] = 'retry'
-  #   $evm.root['ae_retry_limit'] = 15.seconds
-  #   exit MIQ_OK
+    # elsif ip_list.count == 1
+    #   @vm.refresh
+    #   $evm.root['ae_result'] = 'retry'
+    #   $evm.root['ae_retry_limit'] = 15.seconds
+    #   exit MIQ_OK
   else
     $evm.root['ae_result'] = 'ok'
   end
-end
-
-def set_vm_attributes(nic_index, infoblox_network)
-  @vm.custom_set("infoblox_nic_#{nic_index}_network", infoblox_network.to_s)
 end
 
 begin
@@ -170,25 +154,10 @@ begin
   # loop through the task nic options
   get_task_nic_options_hash().each do |nic_index, nic_options|
 
-    # need a network_view to filter the available networks
-    infoblox_network_view = get_network_view(nic_index, nic_options)
-    network_search_filter = "network?network_view=#{infoblox_network_view}"
-
-    # need a network to search
-    infoblox_network = get_network(nic_index, nic_options)
-    raise "missing infoblox_network" if infoblox_network.nil?
-    network_search_filter += "&network=#{infoblox_network}"
-
-    # specify fields to return in payload
-    return_fields = "&_return_fields=network_view,network,netmask,ipv4addr,extattrs,comment,options"
-
-    # get the first element in the network search
-    infoblox_network_hash = call_infoblox(:get, "#{network_search_filter}" + "#{return_fields}")[0]
-    log_and_update_message(:info, "Inspecting infoblox_network_hash: #{infoblox_network_hash.inspect}")
-
     # pull the ip address from the vm object
     ip_addr = nil
-    ip_addr ||= @vm.hardware.networks[nic_index]['ipaddress'] rescue nil
+    ip_addr ||= @vm.hardware.ipaddresses.first rescue nil
+    # ip_addr ||= @vm.hardware.networks[nic_index]['ipaddress'] rescue nil
     # network = @vm.hardware.networks.detect {|net| net.description=='public'}
     # ip_addr ||= network['ipaddress']
 
@@ -204,18 +173,18 @@ begin
     body_hash[:ipv4addrs]         = [
       {
         :ipv4addr => ip_addr,
-        :configure_for_dhcp => false
       }
     ]
 
     record_host_response = call_infoblox(:post, 'record:host', body_hash)
     log_and_update_message(:info, "record_host_response: #{record_host_response}")
 
-    # stuff the Infoblox ref into an array so we can easily back out if something goes wrong
+    # stuff the Infoblox ref(s) into an array so we can easily back out if something goes wrong
     @created_refs << record_host_response
     @task.set_option(:infoblox_created_refs, @created_refs)
 
-    set_vm_attributes(nic_index, infoblox_network)
+    # stuff the Infoblox ref(s) into a string and display them on the VMs custom attributes
+    @vm.custom_set(:infoblox_created_refs, "#{@created_refs.join(",")}")
   end
 
   # Set Ruby rescue behavior

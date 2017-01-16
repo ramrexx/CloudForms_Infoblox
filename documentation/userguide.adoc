@@ -1,0 +1,77 @@
+////
+ userguide.adoc
+
+-------------------------------------------------------------------------------
+   Copyright 2016 Kevin Morey <kevin@redhat.com>
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-------------------------------------------------------------------------------
+////
+
+= CloudForms_Infoblox User Guide
+This user guide will walk you through various integrations with Infoblox.
+
+== Table of Contents
+* <<Create CMDB Record via Custom Button>>
+* <<Update CMDB Record via Custom Button>>
+* <<Delete CMDB Record via Custom Button>>
+* link:troubleshooting.adoc[Troubleshooting Guide]
+
+=== Acquire Next Available IP Address with a VM on a single network interface (nic)
+Steps to create a :
+
+* Log into your CloudForms/ManageIQ UI.
+* Navigate to a VM.
+* Under the *Infoblox* button group select *Create CMDB Record*.
+
+image:images/vm-createcmdb-button.png[link=images/vm-createcmdb-button.png]
+
+* Navigate to your ServiceNow instance and look at *Servers*. You should see details of your CMDB record under *All Servers*. Take note the *Number*, *Comments* and other information populated by CloudForms.
+
+image:images/vm-createcmdb-snowdetails.png[link=images/vm-createcmdb-snowdetails.png]
+
+* Navigate back to your CloudForms VM. At the bottom of the summary page you should see *Custom Attributes* containing ServiceNow CMDB attributes.
+
+image:images/vm-createcmdb-customattributes.png[link=images/vm-createcmdb-customattributes.png]
+
+<<top>>
+
+=== Update CMDB Record via Custom Button
+Steps to update a CMDB Record:
+
+* Log into your CloudForms/ManageIQ UI.
+* Navigate to a VM where you have previously created the CMDB.
+* Under the *ServiceNow* button group select *Update CMDB Record*.
+
+image:images/vm-updatecmdb-button.png[link=images/vm-updatecmdb-button.png]
+
+* Log into your ServiceNow instance and look at *Servers*. You should see details of your CMDB record under *All Servers*. Note the *Comments* have been updated!
+
+image:images/vm-updatecmdb-snowdetails.png[link=images/vm-updatecmdb-snowdetails.png]
+
+<<top>>
+
+=== Delete CMDB Record via Custom Button
+Steps to delete a CMDB Record:
+
+* Log into your CloudForms/ManageIQ UI.
+* Navigate to a VM where you have previously created the CMDB.
+* Under the *ServiceNow* button group select *Delete CMDB Record*.
+
+image:images/vm-deletecmdb-button.png[link=images/vm-deletecmdb-button.png]
+
+* Log into your ServiceNow instance and look at *Servers*.
+* Your CMDB record should have removed.
+* Navigate back to your CloudForms VM. At the bottom of the summary page you should see *Custom Attributes* containing ServiceNow CMDB attributes are gone.
+
+<<top>>

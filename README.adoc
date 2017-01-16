@@ -26,7 +26,6 @@ The purpose of this project is to provide a starting point for integrating Red H
 
 * <<Overview>>
 * <<Installation Steps>>
-** <<Download the Repo>>
 ** <<Import the Automate Domain>>
 ** <<Import the Service Dialogs>>
 ** <<Update Automate StateMachine>>
@@ -38,7 +37,7 @@ The purpose of this project is to provide a starting point for integrating Red H
 
 == Installation Steps
 
-link:https://github.com/ramrexx/CloudForms_Infoblox/archive/master.zip[Download the repo]
+* Download the repo link:https://github.com/ramrexx/CloudForms_Infoblox/archive/master.zip[CloudForms_Infoblox]
 
 === Import the Automate Domain
 
@@ -50,7 +49,7 @@ link:https://github.com/ramrexx/CloudForms_Infoblox/archive/master.zip[Download 
 * Navigate to Automate / CloudForms_Infoblox / Integration / Infoblox / DDI / StateMachines
 ** Update the *StateMachine* class schema with your Infoblox information.
 
-image:documentation/images/snow-automate-schema.png[link=documentation/images/snow-automate-schema.png]
+image:documentation/images/infoblox-automate-schema.png[link=documentation/images/infoblox-automate-schema.png]
 
 <<top>>
 

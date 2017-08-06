@@ -7,7 +7,7 @@
 
  reference: http://community.infoblox.com/t5/API-Integration/The-definitive-list-of-REST-examples/td-p/1214
 -------------------------------------------------------------------------------
-   Copyright 2016 Kevin Morey <kevin@redhat.com>
+   Copyright 2017 Kevin Morey <kevin@redhat.com>
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -78,7 +78,9 @@ if networks_array.blank?
   $evm.log(:info, "Inspecting networks_array: #{networks_array.inspect}")
 
   networks_array.each do |net|
-    dialog_hash[net['network']] = "#{net['comment']}@#{net['network']},#{net['network_view']}"
+    comment = "#{net['comment']}@" if net['comment']
+    display_string = "#{comment}#{net['network']},#{net['network_view']}"
+    dialog_hash[net['network']] = display_string
   end
 end
 

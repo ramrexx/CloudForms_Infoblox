@@ -20,7 +20,7 @@
 = CloudForms Infoblox
 
 
-DISCLAIMER: This repo has been deprecated in favor of the Ansible Infoblox: https://docs.ansible.com/ansible/latest/scenario_guides/guide_infoblox.html
+DISCLAIMER: This repo has been deprecated in favor of the Ansible Infoblox module: https://docs.ansible.com/ansible/latest/scenario_guides/guide_infoblox.html
 
 
 

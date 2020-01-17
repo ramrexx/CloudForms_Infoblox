@@ -19,6 +19,14 @@
 
 = CloudForms Infoblox
 
+
+DISCLAIMER: This repo has been deprecated in favor of the Ansible Infoblox: https://docs.ansible.com/ansible/latest/scenario_guides/guide_infoblox.html
+
+
+
+
+
+
 The purpose of this project is to provide a starting point for integrating Red Hat (R) https://www.redhat.com/en/technologies/cloud-computing/cloudforms[Red Hat CloudForms] and Infoblox.
 
 
